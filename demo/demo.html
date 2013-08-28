@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+	<head>
+		<link href="style.css" rel="stylesheet" />
+		
+		<script src="jquery-1.10.2.min.js"></script>
+		<script src="jquery.ui.widget.min.js"></script>
+		<script src="../jquery.numericfield.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$("#demo1").numericfield();
+				
+				$("#demo2").numericfield({
+					minValue: -10,
+					maxValue: 10,
+					decimalPlaces: 3
+				});
+				
+				$("#demo3").numericfield({
+					stepUp: 2,
+					stepDown: 3
+				});
+				
+				$("#demo4").numericfield({
+					allowSteps: false
+				});
+				
+				$("#demo5").numericfield({
+					realTimeChange: true,
+					quietMillis: 500
+				}).on("change", function() {
+					var v = $(this).numericfield("value");
+					$("#changeList").append("<li>change event triggered. value = " + v + "</li>");
+				});
+				
+				$("#changeDecimals1").click(function() {
+					$("#demo2").numericfield("option", "decimalPlaces", 1);
+				});
+				
+				$("#changeDecimals5").click(function() {
+					$("#demo2").numericfield("option", "decimalPlaces", 5);
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<h1>Default behavior</h1>
+		<p>Integers only, allows steps, no min/max values, no real time change event</p>
+		<input type="text" id="demo1" />
+		
+		<h1>Min/Max & Decimal places</h1>
+		<p>3 decimal places with minimum value = -10 and maximum value = 10</p>
+		<input type="text" id="demo2" />
+		<input type="button" id="changeDecimals1" value="Set decimalPlaces = 1" />
+		<input type="button" id="changeDecimals5" value="Set decimalPlaces = 5" />
+		
+		<h1>Configurable steps value</h1>
+		<p>Step up increments by 2 and step down decrements by 3</p>
+		<input type="text" id="demo3" />
+		
+		<h1>Disable steps</h1>
+		<p>Only allows typing directly</p>
+		<input type="text" id="demo4" />
+		
+		<h1>Real-time change event with "quiet millis" = 500</h1>
+		<p>
+			When steps occur, or when the value is adjusted to fit the min/max values, a change event will automatically be triggered.
+		</p>
+		<p>
+			"Quiet millis" delays the change event by waiting the given amount after the user stops changing the value.<br/>
+			Try keeping the up arrow pressed and then stop and wait a bit.
+		</p>
+		
+		<input type="text" id="demo5" />
+		<ul id="changeList">
+		</ul>
+	</body>
+</html>

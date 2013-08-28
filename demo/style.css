@@ -1,0 +1,5 @@
+body {font: 14px/1.5 Verdana, Geneva, Tahoma, sans-serif; color: #444}
+h1, h2, h3 {margin: 20px 0 5px 0; font-weight: normal; display: block; background-color: #EEE; padding-left: 5px}
+h1 {color:#111; text-transform: uppercase; font-weight: bold;}
+h2 {color:#222; font-size:2.0em;}
+h3 {color:#333; font-style: italic; font-size:1.6em}
