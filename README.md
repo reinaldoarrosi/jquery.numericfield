@@ -222,7 +222,7 @@ By default the amount that is subtracted to the current value is defined by the 
 
     $(element).numericfield({ realTimeChange: true, quietMillis: 400, stepDown: 2 }); // initialization
     ...
-    // Derements current value by 2 and triggers the change event imediatelly
+    // Decrements current value by 2 and triggers the change event imediatelly
     $(element).numericfield('stepDown'); 
     
      // Decrements current value by 2 and triggers the change event obeying the quietMillis option
