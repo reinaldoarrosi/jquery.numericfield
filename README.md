@@ -181,7 +181,7 @@ In cases where the user keeps the up or down arrow pressed, if realTimeChange is
 
 ##API
 
-###value( [newVal] )
+###value([newVal])
 Gets or sets the current value
 
     $(element).numericfield(); // initialization
@@ -192,7 +192,7 @@ Gets or sets the current value
     // Sets the value
     $(element).numericfield('value', value + 10);
 
-###stepUp( [useQuietMillis], [step] )
+###stepUp([useQuietMillis], [step])
 Performs a "step-up" operation. Increments the current value.
 
 By default this method does not obey the quietMillis meaning that, if realTimeChange is true, then a *change* event will be imediatelly triggered. If you can make it obey quietMillis by passing **true** as the first parameter.
@@ -213,7 +213,7 @@ By default the amount that is added to the current value is defined by the stepU
      // Increments current value by 3 and triggers the change event obeying the quietMillis option
     $(element).numericfield('stepUp', true, 3);
 
-###stepDown( [useQuietMillis], [step] )
+###stepDown([useQuietMillis], [step])
 Performs a "step-down" operation. Decrements the current value.
 
 By default this method does not obey the quietMillis meaning that, if realTimeChange is true, then a *change* event will be imediatelly triggered. If you can make it obey quietMillis by passing **true** as the first parameter.
@@ -245,7 +245,7 @@ Changes an option programatically
     // Sets the minValue options to 8
     $(element).numericfield('option', 'minValue', 8);
     
-###destroy( )
+###destroy()
 Destroy the numericfield widget and returns the input to it's original behavior
     
     $(element).numericfield(); // initialization
