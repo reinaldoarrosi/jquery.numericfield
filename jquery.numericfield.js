@@ -1,5 +1,5 @@
 (function ($) {
-    $.widget("ui.numericfield", {
+    $.widget("numericfield", {
         options: {
             maxValue: null,
             minValue: null,
